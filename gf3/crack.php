@@ -1,4 +1,4 @@
-<?php
+
             $include 'fonctiongenevisiteur.php';
             // Connexion    la base de donnes gsb_frais
             $cnxBDD = connexion();
