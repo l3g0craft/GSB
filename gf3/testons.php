@@ -18,13 +18,11 @@
         </tr>
     </thead>
     <?php
-            echo "hello";
 
         include 'fonctiongenevisiteur.php';
-
         // Connexion    la base de donn  es gsb_frais
         $cnxBDD = connexion();
-         echo "hello";
+
 
         $montant= "SELECT id FROM fichefrais " ;
         $result= $cnxBDD->query($montant);
