@@ -2,6 +2,10 @@
     <head>
         <title>Last 10 Results</title>
     </head>
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+
     <body>
         <h1>fiche de frais :
     <table>
@@ -26,20 +30,16 @@
         $result= $cnxBDD->query($montant);
         while ($row = mysqli_fetch_assoc($result)){
             ?>
+                <tr>
+                    <td><?php print($row['id']); ?></td>
+                    <td>suppr</td>
+                    <td>modifier</td>
+                    <td>voir</td>
+                </tr>
             
 
-                <tr>
-                <td>  
-                    <?php print($row['id']); ?>
-                </td>
-                <td>
-                    <h1>modifier</h1>
-                </td>
-                </tr>
-            </table>
-
         <?php } ?>
-
+        </table>
             
     </body>
 </html>
