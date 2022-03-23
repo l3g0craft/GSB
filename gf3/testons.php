@@ -5,21 +5,14 @@
     <body>
         <h1>fiche de frais :
     <table>
+    <thead>
         <tr>
-            <td>
-                date
-            </td>
-            <td>
-                supprimer
-            </td>
-            <td>
-                modifier
-            </td>
-            <td>
-                voir
-            </td>
+            <td>date</td>
+            <td>supprimer</td>
+            <td>modifier</td>
+            <td>voir</td>
         </tr>
-
+    </thead>
     <?php
             echo "hello";
 
