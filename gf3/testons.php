@@ -1,15 +1,20 @@
-<?php
-//conexion
-header('Content-type:text/html; charset=iso-8859-1');
-include 'fonctiongenevisiteur.php';
-$cnxBDD = connexion();
+<html>
+    <head>
+        <title>Last 10 Results</title>
+    </head>
+    <body>
+        
+        <?php
+            include 'fonctiongenevisiteur.php';
+            // Connexion    la base de donn  es gsb_frais
+            $cnxBDD = connexion();
 
-
-//sortie de la BD
-$montant= "SELECT id FROM fichefrais where id=$i";
-$result= $cnxBDD->query($montant);
-while ($row = mysqli_fetch_assoc($result)){}
-    $idfrais=$row['id'];
-    echo $idfrais;
-}
-?>
+            $idforfait = "SELECT id FROM etat" ;
+            $result= $cnxBDD->query($idforfait);
+            while ($row = mysqli_fetch_assoc($result)){
+            echo "hello";
+            }
+        ?>
+            
+    </body>
+</html>

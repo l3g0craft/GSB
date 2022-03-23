@@ -1,9 +1,9 @@
 <?php
-
+ header('Content-type:text/html; charset=iso-8859-1');
 function connexion(){
     $host = "localhost";
         $user = "root";
-        $password = "";
+        $password = "leahpar29";
         $dbname = "gsb_frais";
         $port ="3306";
 
@@ -42,17 +42,3 @@ function ecritRequeteSQL($uneChaine) {
 	fwrite($handle,$uneChaine);
 	fclose($handle);
 }
-
-function ExtraireCommune($ligne,$commune,$cp){
-    $texte = array()
-    $texte = preg_split(";",$texte);
-    if $texte[1]==$commune && $texte[2]==$cp{
-        return $commune
-        return $cp
-    }
-}
-
-
-?>
-
-
