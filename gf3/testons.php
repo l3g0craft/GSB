@@ -1,13 +1,14 @@
+<?php $visiteur="Lucas"?>
 <html>
     <head>
-        <title>Last 10 Results</title>
+        <title>Last 10 Results<?php echo $visiteur ?></title>
     </head>
 
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles.css">
 
     <body>
-        <h1>fiche de frais :
+        <h1>fiche de frais : <?php echo $visiteur ?></h1>
     <table>
     <thead>
         <tr>
