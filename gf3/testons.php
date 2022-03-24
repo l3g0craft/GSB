@@ -11,7 +11,7 @@ $prenomvisiteur="Mohamed"
     <link rel="stylesheet" href="styles.css">
 
     <body>
-        <h1>fiche de frais : <?php echo "$nomvisiteur $prenomvisiteur" ?><a>ajouter<img src="ajouter.png" class="image" ></a></h1>
+        <h1>fiche de frais : <a>ajouter<img src="ajouter.png" class="image" ></a></h1>
     <table>
     <thead>
         <tr>
@@ -28,7 +28,7 @@ $prenomvisiteur="Mohamed"
         $cnxBDD = connexion();
 
 
-        $montant= "SELECT mois,annee,montantValide,idEtat FROM fichefrais INNER JOIN visiteur ON visiteur.id = fichefrais.idVisiteur where visiteur.nom="<?php $nomvisiteur ?>"and visiteur.prenom="<?php $prenomvisiteur ?>"; " ;
+        $montant= "SELECT mois,annee,montantValide,idEtat FROM fichefrais INNER JOIN visiteur ON visiteur.id = fichefrais.idVisiteur where visiteur.nom='<?php $nomvisiteur?>'and visiteur.prenom='<?php $prenomvisiteur?>'; " ;
         $result= $cnxBDD->query($montant);
         while ($row = mysqli_fetch_assoc($result)){
             ?>
