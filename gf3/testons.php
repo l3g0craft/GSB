@@ -1,7 +1,7 @@
 <?php $visiteur="Lucas"?>
 <html>
     <head>
-        <title>Last 10 Results<?php echo $visiteur ?></title>
+        <title>Last 10 Results <?php echo $visiteur ?> </title>
     </head>
 
     <meta charset="utf-8">

@@ -2,7 +2,7 @@ table, th, td {
     border: 1px solid;
 }
 body {
-  background-color: rgb(199, 235, 247);
+  background-color: red   ;
 }
 table {
   width: 100%;
