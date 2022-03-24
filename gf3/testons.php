@@ -31,9 +31,9 @@
             ?>
                 <tr>
                     <td><?php print($row['id']); ?></td>
-                    <td class="ligne">suppr</td>
-                    <td class="ligne">modifier</td>
-                    <td class="ligne">voir</td>
+                    <td class="ligne"><img src="supprimer.jpg"class="image" ></td>
+                    <td class="ligne"><img src="modifier.jpg" class="image" ></td>
+                    <td class="ligne"><img src="voir.jpg" class="image" ></td>
                 </tr>
             
 
