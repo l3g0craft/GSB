@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
 
     <body>
-        <h1>fiche de frais : <?php echo $visiteur ?></h1>
+        <h1>fiche de frais : <?php echo $visiteur ?><a>ajouter<img src="ajouter.png" class="image" ></a></h1>
     <table>
     <thead>
         <tr>
@@ -31,9 +31,9 @@
             ?>
                 <tr>
                     <td><?php print($row['id']); ?></td>
-                    <td>suppr</td>
-                    <td>modifier</td>
-                    <td>voir</td>
+                    <td class="ligne">suppr</td>
+                    <td class="ligne">modifier</td>
+                    <td class="ligne">voir</td>
                 </tr>
             
 
