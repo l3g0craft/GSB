@@ -1,6 +1,6 @@
 <?php 
-$nomvisiteur="Humbert"
-$prenomvisiteur="Mohamed"
+$nomvisiteur="Humbert";
+$prenomvisiteur="Mohamed";
 ?>
 <html>
     <head>
@@ -33,7 +33,7 @@ $prenomvisiteur="Mohamed"
         while ($row = mysqli_fetch_assoc($result)){
             ?>
                 <tr>
-                    <td class="ligne"><?php print($row['mois'] ./. $row['annee']." ". $row['montantValide'] ." ". $row['idEtat']); ?></td>
+                    <td class="ligne"><?php print($row['mois'] ."/". $row['annee']." ". $row['montantValide'] ." ". $row['idEtat']); ?></td>
                     <td class="ligne"><img src="supprimer.jpg"class="image" ></td>
                     <td class="ligne"><img src="modifier.jpg" class="image" ></td>
                     <td class="ligne"><img src="voir.jpg" class="image" ></td>
