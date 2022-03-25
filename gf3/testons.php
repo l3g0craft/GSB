@@ -28,7 +28,7 @@ $prenomvisiteur="Mohamed";
         $cnxBDD = connexion();
 
 
-        $montant= "SELECT mois,annee,montantValide,idEtat FROM fichefrais INNER JOIN visiteur ON visiteur.id = fichefrais.idVisiteur where visiteur.nom='$nomvisiteur' and visiteur.prenom='$prenomvisiteur'; " ;
+        $montant= "SELECT mois,annee,montantValide,libelle FROM fichefrais,Etat where idVisiteur in (select id from visiteur where nom='$nomvisiteur' and prenom='$prenomvisiteur') and fichefrais.idEtat=Etat.id; " ;
 
         $result= $cnxBDD->query($montant);
         while ($row = mysqli_fetch_assoc($result)){
