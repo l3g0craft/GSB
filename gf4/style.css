@@ -1,0 +1,13 @@
+.saisie{
+    width: 60%;
+    text-align: left;   
+}
+.frais{
+    width: 30%;
+  }
+input{
+    width: 10%;
+}
+div{
+    width: 1000px;
+}
