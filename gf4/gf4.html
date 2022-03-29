@@ -6,21 +6,24 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
 
-    <body>
-        <div style="background-color: rgb(0, 174, 255);">
-            <div style="background-color: white";>
-                <h1>Gestion des Frais</h1>
+    <body style="color: white";>
+        <div style="background-color: rgb(0, 174, 255); width: 30%;margin: 0 auto;">
+
+            <div style="background-color: white;color: rgb(0, 132, 255);";>
+
+                <h1 >Gestion des Frais<img src="gf4.png" style="vertical-align:middle;"></h1>
+
             </div>
 
             <h2>
                 Saisie
             </h2>
             <br>
-            <table class="saisie">
+            <table>
                 <tr>
-                    <td style="width: 50%;">PERIODE </td>
-                    <td>Mois (2 chiffres) :<input type="text" ></td>
-                    <td>Année (4 chiffres) :<input type="text" ></td>
+                    <td style="width: 180px;">PERIODE </td>
+                    <td >Mois (2 chiffres) :<input type="number" class="saisie_input" ></td>
+                    <td >Année (4 chiffres) :<input type="number" class="saisie_input" ></td>
                 </tr>
                 <tr>
                     <td>D'ENGAGEMENT</td>
@@ -39,21 +42,22 @@
             <table class="frais">
                 <tr>
                     <td>repas midi :</td>
-                    <td><input type="text" ></td>
+                    <td><input type="number" class="saisie_input" ></td>
                 </tr>
                 <tr>
                     <td>Nuitées :</td>
-                    <td><input type="text" ></td>
+                    <td><input type="number" class="saisie_input"></td>
                 </tr>
                 <tr>
                     <td>Etape :</td>
-                    <td><input type="text" ></td>
+                    <td><input type="number" class="saisie_input"></td>
                 </tr>
                 <tr>
                     <td>Km :</td>
-                    <td><input type="text" ></td>
+                    <td><input type="number" class="saisie_input"></td>
                 </tr>
 
             </table>
+            <input type="button" value="soumettre la requte">
         </div>
     </body>

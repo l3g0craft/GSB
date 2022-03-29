@@ -1,13 +1,6 @@
-.saisie{
-    width: 60%;
-    text-align: left;   
+.saisie_input{
+    width: 50px; 
 }
 .frais{
     width: 30%;
   }
-input{
-    width: 10%;
-}
-div{
-    width: 1000px;
-}
