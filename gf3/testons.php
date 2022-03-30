@@ -1,6 +1,6 @@
 <?php 
-$nomvisiteur="Humbert";
-$prenomvisiteur="Mohamed";
+$nomvisiteur=$_GET['nom'];
+$prenomvisiteur=$_GET['prenom'];
 ?>
 <html>
     <head>
@@ -11,7 +11,7 @@ $prenomvisiteur="Mohamed";
     <link rel="stylesheet" href="styles.css">
 
     <body>
-    <h1>fiche de frais de : <?php echo "$nomvisiteur $prenomvisiteur    " ?> <a>  ajouter<img src="ajouter.png" class="image" ></a></h1>
+    <h1>fiche de frais de : <?php echo " $nomvisiteur  $prenomvisiteur    " ?> <a href="../gf4/gf4.php?nom=<?php echo $nomvisiteur;?> & prenom=<?php echo $prenomvisiteur;?>,">  ajouter<img src="ajouter.png" class="image" ></a></h1>
     <table>
     <thead>
         <tr>
@@ -29,7 +29,6 @@ $prenomvisiteur="Mohamed";
 
 
         $montant= "SELECT fichefrais.id,mois,annee,montantValide,libelle FROM fichefrais,Etat where idVisiteur in (select id from visiteur where nom='$nomvisiteur' and prenom='$prenomvisiteur') and fichefrais.idEtat=Etat.id; " ;
-        $montant=iconv('utf8', 'ASCII//TRANSLIT//IGNORE', $montant);
         $result= $cnxBDD->query($montant);
         while ($row = mysqli_fetch_assoc($result)){
             ?>
