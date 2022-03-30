@@ -42,3 +42,16 @@ function ecritRequeteSQL($uneChaine) {
 	fwrite($handle,$uneChaine);
 	fclose($handle);
 }
+
+
+
+$cnxBDD = connexion();
+
+function idSQL($table){
+    global $cnxBDD;
+    $sql="SELECT COUNT(id) FROM $table;";
+    $result= $cnxBDD->query($sql);
+    while ($row = mysqli_fetch_assoc($result)){
+        return ($row['COUNT(id)']);
+    }
+}
