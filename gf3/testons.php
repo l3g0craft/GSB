@@ -23,7 +23,7 @@ $prenomvisiteur=$_GET['prenom'];
     </thead>
     <?php
 
-        include 'fonctiongenevisiteur.php';
+        include '../fonctiongenevisiteur.php';
         // Connexion    la base de donn  es gsb_frais
         $cnxBDD = connexion();
 

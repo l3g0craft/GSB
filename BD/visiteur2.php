@@ -2,7 +2,7 @@
 	
 	header('Content-type:text/html; charset=iso-8859-1');
 	ini_set('display_errors', 1);
-	include 'fonctiongenevisiteur.php';
+	include '../fonctiongenevisiteur.php';
 
    	// Connexion à la base de données gsb_frais
 	$cnxBDD = connexion();
