@@ -19,7 +19,7 @@
                                 $cnxBDD= connexion();
 
                                 //récupère les prenom des visiteur dont l'idEtat est cloturée
-                                $select = 'SELECT DISTINCT visiteur.id,nom,prenom FROM visiteur,fichefrais WHERE fichefrais.idVisiteur=visiteur.id AND idEtat="CL";';
+                                $select = 'SELECT DISTINCT visiteur.id id,nom,prenom FROM visiteur,fichefrais WHERE fichefrais.idVisiteur=visiteur.id AND idEtat="CL";';
                                 
                                 //exécution de la requete select
                                 $result = $cnxBDD->query($select);
