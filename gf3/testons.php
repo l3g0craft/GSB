@@ -43,6 +43,7 @@ $prenomvisiteur=$_GET['prenom'];
 
                     <td class="ligne">
                         <?php if ($row['idEtat']=="CR"){?>
+                            <a href="../gf4/gf4.php?modifier=1 & id=<?php echo $row['id'];?>">
                             <img src="modifier.jpg" class="image" ></td>
                         <?php } ?>
 

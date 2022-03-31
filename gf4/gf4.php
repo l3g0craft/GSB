@@ -1,10 +1,17 @@
 <?php
-$nom =$_GET['nom'];
-$prenom = $_GET['prenom'];
+#$nom =$_GET['nom'];
+#$prenom = $_GET['prenom'];
+
+
+if($_GET['modifier'] != -1){
+    $id=$_GET['id']
+    $select_forfait= "SELECT id,libelle,montant FROM forfait where $id"  ;
+    $result= $cnxBDD->query($select_forfait);
+    $row = mysqli_fetch_assoc($result)
+    echo $row
+}
 
 ?>
-
-
 
 
 
@@ -22,7 +29,7 @@ $prenom = $_GET['prenom'];
 
                 <div style="background-color: white;color: rgb(0, 132, 255);";>
 
-                    <h1 >Gestion des Frais <?php  echo $nom  ?><img src="gf4.png" style="vertical-align:middle;"></h1>
+                    <h1 >Gestion des Frais <img src="gf4.png" style="vertical-align:middle;"></h1>
 
                 </div>
 
