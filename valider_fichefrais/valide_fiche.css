@@ -1,0 +1,41 @@
+.valide{
+    background-color:#FF7A33;
+    color:#FFFFFF;
+    padding : 5px 5px 5px 5px;
+    margin: auto;
+    width:75%;
+}
+
+.tablo{ 
+    border-color:#FFFFFF;
+    text-align:center;
+}
+
+
+.txt{
+    background-color:#FF7A33;
+    border-color:#FFFFFF;
+    color:#FFFFFF;
+    margin:5px;
+    width:50%;
+}
+
+.cellule{
+    padding:20px 100px 20px 10px;
+}
+
+.bouton{
+    color:#FF7A33;
+    border-color:#1eb4b4;
+}
+
+.bg_bouton{
+    background-color:#FF7A33;
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+}
+
+td{
+    padding:auto;
+}
