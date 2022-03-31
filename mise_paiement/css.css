@@ -1,0 +1,11 @@
+.bouton{
+    color:#FF7A33;
+    border-color:#1eb4b4;
+}
+
+.bg_bouton{
+    background-color:#FF7A33;
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+}
