@@ -1,14 +1,18 @@
 <?php
 #$nom =$_GET['nom'];
 #$prenom = $_GET['prenom'];
+include '../fonctiongenevisiteur.php';
+        // Connexion    la base de donn  es gsb_frais
+$cnxBDD = connexion();
+$modifier = $_GET['modifier'];
 
-
-if($_GET['modifier'] != -1){
-    $id=$_GET['id']
-    $select_forfait= "SELECT id,libelle,montant FROM forfait where $id"  ;
+if($modifier==1){
+    $id=$_GET['id'];
+    $select_forfait= "SELECT idfichefrais FROM lignefraisforfait where idfichefrais=$id"  ;
     $result= $cnxBDD->query($select_forfait);
-    $row = mysqli_fetch_assoc($result)
-    echo $row
+    while ($row = mysqli_fetch_assoc($result)){
+
+    }
 }
 
 ?>
@@ -60,19 +64,19 @@ if($_GET['modifier'] != -1){
                 <table class="frais">
                     <tr>
                         <td>repas midi :</td>
-                        <td><input type="number" id="repas" name="repas" class="saisie_input" ></td>
+                        <td><input type="number" id="repas" value="$repas"name="repas" class="saisie_input" ></td>
                     </tr>
                     <tr>
                         <td>Nuitées :</td>
-                        <td><input type="number" id="nuitees" name="nuitees" class="saisie_input"></td>
+                        <td><input type="number" id="nuitees" value="$nuitees" name="nuitees" class="saisie_input"></td>
                     </tr>
                     <tr>
                         <td>Etape :</td>
-                        <td><input type="number" id="etape" name="etape" class="saisie_input"></td>
+                        <td><input type="number" id="etape" value="$etape" name="etape" class="saisie_input"></td>
                     </tr>
                     <tr>
                         <td>Km :</td>
-                        <td><input type="number" id="km" name="km" class="saisie_input"></td>
+                        <td><input type="number" id="km" value="$km" name="km" class="saisie_input"></td>
                     </tr>
 
                 </table>
