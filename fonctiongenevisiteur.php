@@ -5,7 +5,7 @@ function connexion(){
         $user = "root";
         $password = "leahpar29";
         $dbname = "gsb_frais";
-        $port ="3307";
+        $port ="3306";
 
         $mysqli = new mysqli($host, $user, $password, $dbname, $port);
         if ($mysqli->connect_errno) {
