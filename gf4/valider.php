@@ -6,7 +6,6 @@ $cnxBDD = connexion();
 $id=idSQL('fichefrais')+1;
 
 $date = date("Y-m-d"); 
-
 $mois =$_GET['mois'];
 $annee = $_GET['annee'];
 $repas =$_GET['repas'];

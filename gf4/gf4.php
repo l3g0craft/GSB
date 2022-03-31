@@ -1,6 +1,7 @@
 <?php
 $nom =$_GET['nom'];
 $prenom = $_GET['prenom'];
+
 ?>
 
 
@@ -32,8 +33,8 @@ $prenom = $_GET['prenom'];
                 <table>
                     <tr>
                         <td style="width: 180px;">PERIODE </td>
-                        <td >Mois (2 chiffres) :<input type="number" id="mois" name="mois" required maxlength="2" class="saisie_input" ></td>
-                        <td >Année (4 chiffres) :<input type="number" id="annee" name="annee" required maxlength="4" class="saisie_input" ></td>
+                        <td >Mois (2 chiffres) :<input type="number" id="mois" value=<?php echo (date("m"));?> name="mois" required maxlength="2" class="saisie_input" readonly="readonly" ></td>
+                        <td >Année (4 chiffres) :<input type="text" id="annee" value=<?php echo (date("Y"));?> name="annee" required maxlength="4" class="saisie_input" readonly="readonly"></td>
                     </tr>
                     <tr>
                         <td>D'ENGAGEMENT</td>

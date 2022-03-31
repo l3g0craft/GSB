@@ -37,7 +37,7 @@ $prenomvisiteur=$_GET['prenom'];
 
                     <td class="ligne">
                         <?php if ($row['idEtat']=="CR"){?>
-                            <a href="suprimer.php?param=<?php echo $row['id'];?>"><img src="supprimer.jpg"class="image"></a>
+                            <a href="suprimer.php?id=<?php echo $row['id'];?>"><img src="supprimer.jpg"class="image"></a>
                         <?php } ?>
                     </td>
 
