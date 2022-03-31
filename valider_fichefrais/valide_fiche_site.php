@@ -19,7 +19,7 @@
                                 $cnxBDD= connexion();
 
                                 //récupère les prenom des visiteur dont l'idEtat est cloturée
-                                $select = 'SELECT DISTINCT nom,prenom FROM visiteur,fichefrais WHERE fichefrais.idVisiteur=visiteur.id AND idEtat="Cloturee";';
+                                $select = 'SELECT DISTINCT id,nom,prenom FROM visiteur,fichefrais WHERE fichefrais.idVisiteur=visiteur.id AND idEtat="CL";';
                                 
                                 //exécution de la requete select
                                 $result = $cnxBDD->query($select);
@@ -30,7 +30,7 @@
                                     
                                     //affichage des noms des visiteurs dans une liste
                                     while($row = mysqli_fetch_assoc($result)) {
-                                        echo "<option value='$row[prenom]'>$row[prenom]"." "."$row[nom]</option>";
+                                        echo "<option value='$row[id]'>$row[prenom]"." "."$row[nom]</option>";
                                     }
                                     echo '</select>';  
                                 echo'<td>';
