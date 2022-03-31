@@ -8,7 +8,7 @@ include '../fonctiongenevisiteur.php';
 $cnxBDD = connexion();
 
 
-$date = date("y-m-d"); 
+$date = date("Y-m-d"); 
 $j=1;
 for($i=1;$i<199;$i++){
      $mont=rand(1,1000);

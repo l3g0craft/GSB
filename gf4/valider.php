@@ -4,7 +4,9 @@ include '../fonctiongenevisiteur.php';
         // Connexion    la base de donn  es gsb_frais
 $cnxBDD = connexion();
 $id=idSQL('fichefrais')+1;
-$date = date("y-m-d"); 
+
+$date = date("Y-m-d"); 
+
 $mois =$_GET['mois'];
 $annee = $_GET['annee'];
 $repas =$_GET['repas'];
@@ -23,7 +25,7 @@ $result= $cnxBDD->query($select_forfait);
 $montant=$forfait[1]*$etape+$forfait[2]*$km+$forfait[3]*$repas+$forfait[4]*$nuitees;
 
 
-$sql="INSERT INTO fichefrais (id,idvisiteur,mois,annee,montantValide,dateModif,idEtat) VALUES ($id,1,$mois,$annee,$montant,$date,'CR');";
+$sql="INSERT INTO fichefrais (id,idvisiteur,mois,annee,montantValide,dateModif,idEtat) VALUES ($id,1,$mois,$annee,$montant,'$date','CR');";
 
 echo "Sql : ".$sql."<br />";
 $result = $cnxBDD->query($sql)

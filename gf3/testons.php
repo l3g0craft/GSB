@@ -28,17 +28,24 @@ $prenomvisiteur=$_GET['prenom'];
         $cnxBDD = connexion();
 
 
-        $montant= "SELECT fichefrais.id,mois,annee,montantValide,libelle FROM fichefrais,Etat where idVisiteur in (select id from visiteur where nom='$nomvisiteur' and prenom='$prenomvisiteur') and fichefrais.idEtat=Etat.id; " ;
+        $montant= "SELECT fichefrais.id,mois,annee,montantValide,libelle,idEtat FROM fichefrais,Etat where idVisiteur in (select id from visiteur where nom='$nomvisiteur' and prenom='$prenomvisiteur') and fichefrais.idEtat=Etat.id; " ;
         $result= $cnxBDD->query($montant);
         while ($row = mysqli_fetch_assoc($result)){
             ?>
                 <tr>
                     <td class="ligne"><?php print($row['mois'] ."/". $row['annee']." ". $row['montantValide'] ." ". $row['libelle']); ?></td>
 
-                    <td class="ligne"><a href="suprimer.php?param=<?php echo $row['id'];?>"><img src="supprimer.jpg"class="image"></a></td>
+                    <td class="ligne">
+                        <?php if ($row['idEtat']=="CR"){?>
+                            <a href="suprimer.php?param=<?php echo $row['id'];?>"><img src="supprimer.jpg"class="image"></a>
+                        <?php } ?>
+                    </td>
 
-                    <td class="ligne"><img src="modifier.jpg" class="image" ></td>
-                    
+                    <td class="ligne">
+                        <?php if ($row['idEtat']=="CR"){?>
+                            <img src="modifier.jpg" class="image" ></td>
+                        <?php } ?>
+
                     <td class="ligne"><img src="voir.jpg" class="image" ></td>
                 </tr>
             
