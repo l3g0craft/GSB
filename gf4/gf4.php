@@ -5,14 +5,21 @@ include '../fonctiongenevisiteur.php';
         // Connexion    la base de donn  es gsb_frais
 $cnxBDD = connexion();
 $modifier = $_GET['modifier'];
-
+$i=0;
 if($modifier==1){
     $id=$_GET['id'];
-    $select_forfait= "SELECT idfichefrais FROM lignefraisforfait where idfichefrais=$id"  ;
+    $select_forfait= "SELECT quantite FROM lignefraisforfait where idfichefrais=$id"  ;
     $result= $cnxBDD->query($select_forfait);
+    $lignefraisforfait=[];
     while ($row = mysqli_fetch_assoc($result)){
-
+        $i++;
+        $lignefraisforfait[$i]=$row['quantite'];
     }
+    $repas =$lignefraisforfait[1];
+    $nuitees =$lignefraisforfait[2];
+    $etape =$lignefraisforfait[3];
+    $km =$lignefraisforfait[4];
+    echo $repas;
 }
 
 ?>
@@ -36,7 +43,6 @@ if($modifier==1){
                     <h1 >Gestion des Frais <img src="gf4.png" style="vertical-align:middle;"></h1>
 
                 </div>
-
                 <h2>
                     Saisie
                 </h2>
@@ -62,24 +68,50 @@ if($modifier==1){
 
 
                 <table class="frais">
+                    <?php if($modifier==1){?>
                     <tr>
                         <td>repas midi :</td>
-                        <td><input type="number" id="repas" value="$repas"name="repas" class="saisie_input" ></td>
+                        <td><input type="number" id="repas" value=<?php echo $repas?> name="repas" class="saisie_input" ></td>
                     </tr>
                     <tr>
                         <td>Nuitées :</td>
-                        <td><input type="number" id="nuitees" value="$nuitees" name="nuitees" class="saisie_input"></td>
+                        <td><input type="number" id="nuitees" value=<?php echo $nuitees?> name="nuitees" class="saisie_input"></td>
                     </tr>
                     <tr>
                         <td>Etape :</td>
-                        <td><input type="number" id="etape" value="$etape" name="etape" class="saisie_input"></td>
+                        <td><input type="number" id="etape" value=<?php echo $etape?> name="etape" class="saisie_input"></td>
                     </tr>
                     <tr>
                         <td>Km :</td>
-                        <td><input type="number" id="km" value="$km" name="km" class="saisie_input"></td>
+                        <td><input type="number" id="km" value=<?php echo $km?> name="km" class="saisie_input"></td>
                     </tr>
 
+                    <?php }else{?>
+
+                    <tr>
+                        <td>repas midi :</td>
+                        <td><input type="number" id="repas" value="" name="repas" class="saisie_input" ></td>
+                    </tr>
+                    <tr>
+                        <td>Nuitées :</td>
+                        <td><input type="number" id="nuitees" value="" name="nuitees" class="saisie_input"></td>
+                    </tr>
+                    <tr>
+                        <td>Etape :</td>
+                        <td><input type="number" id="etape" value="" name="etape" class="saisie_input"></td>
+                    </tr>
+                    <tr>
+                        <td>Km :</td>
+                        <td><input type="number" id="km" value="" name="km" class="saisie_input"></td>
+                    </tr>
+
+                    <?php } ?>
+
+                    
+                    <input type="hidden" id="modifier" name="modifier" value=<?php echo $modifier?>>
                 </table>
+
+                
                 <input type="submit"  id="valider" value="soumettre la requte">
             </div>
         </form>
