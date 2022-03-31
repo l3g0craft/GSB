@@ -14,7 +14,7 @@
                         <td>
                             <?php
                             
-                                include 'fonctionsql.php';
+                                include '../fonctiongenevisiteur.php';
 
                                 $cnxBDD= connexion();
 
