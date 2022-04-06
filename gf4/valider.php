@@ -3,7 +3,7 @@
 include '../fonctiongenevisiteur.php';
         // Connexion    la base de donn  es gsb_frais
 $cnxBDD = connexion();
-$id=idSQL('fichefrais')+1;
+$id=idSQL('fichefrais');
 
 
 

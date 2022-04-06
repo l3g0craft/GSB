@@ -1,11 +1,28 @@
 <?php
  header('Content-type:text/html; charset=iso-8859-1');
 function connexion(){
-    $host = "127.0.0.1";
-        $user = "root";
-        $password = "password";
-        $dbname = "gsb_frais";
-        $port ="3307";
+
+            //local
+            $host = "127.0.0.1";
+            $user = "root";
+            $password = "password";
+            $dbname = "gsb_frais";
+            $port='3307';
+
+            
+            //serveur
+            /*
+            $host = "localhost";
+            $user = "leahpar29";
+            $password = "Iroise29";
+            $dbname = "gsb_frais";
+            $port='3306';*/
+
+
+
+
+
+
 
         $mysqli = new mysqli($host, $user, $password, $dbname, $port);
         if ($mysqli->connect_errno) {
@@ -51,7 +68,13 @@ function idSQL($table){
     global $cnxBDD;
     $sql="SELECT COUNT(id) FROM $table;";
     $result= $cnxBDD->query($sql);
+    $id=0;
     while ($row = mysqli_fetch_assoc($result)){
-        return ($row['COUNT(id)']);
-    }
+        echo $row['COUNT(id)'];
+        if($row['COUNT(id)']>$id){
+            $id=$row['COUNT(id)'];
+            
+        }
+    }echo $id;
+    return ($id+2);
 }
