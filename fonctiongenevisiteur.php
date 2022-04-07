@@ -63,7 +63,6 @@ function ecritRequeteSQL($uneChaine) {
 
 
 $cnxBDD = connexion();
-
 function idSQL($table){
     global $cnxBDD;
     $sql="SELECT id FROM $table;";
@@ -74,4 +73,25 @@ function idSQL($table){
             
     }
     return ($id+1);
+}
+
+
+function quantforfait($id){
+    global $cnxBDD;
+    $i=0;
+    $select_forfait= "SELECT quantite FROM lignefraisforfait where idfichefrais=$id"  ;
+    $result= $cnxBDD->query($select_forfait);
+    $lignefraisforfait=[];
+    while ($row = mysqli_fetch_assoc($result)){
+        
+        $lignefraisforfait[$i]=$row['quantite'];
+        $i++;
+    }
+    return $lignefraisforfait;
+    /*
+    $repas = $lignefraisforfait[0];
+    $nuitees = $lignefraisforfait[1];
+    $etape = $lignefraisforfait[2];
+    $km = $lignefraisforfait[3];
+    */
 }

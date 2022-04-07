@@ -47,7 +47,7 @@ $prenomvisiteur=$_GET['prenom'];
                             <img src="modifier.jpg" class="image" ></td>
                         <?php } ?>
 
-                    <td class="ligne"><img src="voir.jpg" class="image" ></td>
+                    <td class="ligne"><a href="../gf5/gf5.php?id=<?php echo $row['id'];?> & nom=<?php echo $nomvisiteur;?> & prenom=<?php echo $prenomvisiteur;?> & mois=<?php echo $row['mois'];?> & annee=<?php echo $row['annee'];?>"><img src="voir.jpg" class="image" ></td>
                 </tr>
             
 
