@@ -18,26 +18,33 @@ $annee =$_GET['annee'];
 
         <body style="color: white";>
             <form action="valider.php" method="get">
-                <div style="width: 600px;margin: 0 auto;color: blue">
+                <div style="width: 600px;margin: 0 auto;color:rgb(70, 155, 224);">
 
                     <div>
                         <h1 >Suivi de remboursement des frais <img src="gf4.png" style="vertical-align:middle;"></h1>
                     </div>
 
-                    <div style="background-color: a7b9e8">
+                    <div style="background-color: #defaff">
                             <h2>fiche de frais de :<?php echo " $nomvisiteur  $prenomvisiteur    " ;?></h2>
                         
 
                         <div style="background-color: rgb(0, 174, 255); width: 600px;margin: 0 auto;color:white">
                             <div style="width: 600px;margin: 0 auto;">
-                                periode &nbsp; mois/année: <input type="text" value="<?php echo($mois)?>" readonly="readonly"> <input type="text" value="<?php echo($annee)?>" readonly="readonly">
+                                <table >
+                                    <tr>
+                                        <th>periode</th>
+                                        <td style="width: 50px"> </td>
+                                        <td> mois/année: <input type="text" value="<?php echo($mois)?>" readonly="readonly"> <input type="text" value="<?php echo($annee)?>" readonly="readonly"></td>
+                                    </tr>
+                                </table>
+
                             </div>
 
                             <br/>
 
                             <div style="padding-bottom: 1px;">
                                 <h2>frais au forfait<h2>
-                                <table >
+                                <table class="tablefrais" >
                                     <thead class=frais>
                                         <tr class=frais>
                                             <td class=frais>repas midi</td>
