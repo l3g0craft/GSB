@@ -24,7 +24,6 @@ $resultat=[intval($etape),intval($km),intval($nuitees),intval($repas)];
 $a=0;
 $i=0;
 $forfait = [];
-$T=["ETP","KM","NUI","REP"];
 
 
 $select_forfait= "SELECT id,libelle,montant FROM forfait" ;

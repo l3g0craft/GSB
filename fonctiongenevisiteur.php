@@ -66,15 +66,12 @@ $cnxBDD = connexion();
 
 function idSQL($table){
     global $cnxBDD;
-    $sql="SELECT COUNT(id) FROM $table;";
+    $sql="SELECT id FROM $table;";
     $result= $cnxBDD->query($sql);
     $id=0;
     while ($row = mysqli_fetch_assoc($result)){
-        echo $row['COUNT(id)'];
-        if($row['COUNT(id)']>$id){
-            $id=$row['COUNT(id)'];
+            $id=$row['id'];
             
-        }
-    }echo $id;
-    return ($id+2);
+    }
+    return ($id+1);
 }
