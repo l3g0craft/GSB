@@ -4,7 +4,7 @@ $prenomvisiteur=$_GET['prenom'];
 ?>
 <html>
     <head>
-        <title>Last 10 Results </title>
+        <title>fiche de frais</title>
     </head>
 
     <meta charset="utf-8">

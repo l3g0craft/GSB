@@ -34,7 +34,7 @@ $annee =$_GET['annee'];
                                     <tr>
                                         <th>periode</th>
                                         <td style="width: 50px"> </td>
-                                        <td> mois/année: <input type="text" value="<?php echo($mois)?>" readonly="readonly"> <input type="text" value="<?php echo($annee)?>" readonly="readonly"></td>
+                                        <td> mois/annee: <input type="text" value="<?php echo($mois)?>" readonly="readonly"> <input type="text" value="<?php echo($annee)?>" readonly="readonly"></td>
                                     </tr>
                                 </table>
 
@@ -48,7 +48,7 @@ $annee =$_GET['annee'];
                                     <thead class=frais>
                                         <tr class=frais>
                                             <td class=frais>repas midi</td>
-                                            <td class=frais>nuitée</td>
+                                            <td class=frais>nuitee</td>
                                             <td class=frais>etape</td>
                                             <td class=frais>km</td>
                                             <td class=frais>situation</td>
