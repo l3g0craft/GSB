@@ -5,9 +5,9 @@ function connexion(){
             //local
             $host = "127.0.0.1";
             $user = "root";
-            $password = "leahpar29";
+            $password = "password";
             $dbname = "gsb_frais";
-            $port='3306';
+            $port='3307';
 
             
             //serveur
