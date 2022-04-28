@@ -11,7 +11,7 @@ $prenomvisiteur=$_GET['prenom'];
     <link rel="stylesheet" href="styles.css">
 
     <body>
-        <div style=" width: 600px;margin: 0 auto;">
+        <div style=" width: 1000px;margin: 0 auto;">
             <h1>fiche de frais de : <?php echo " $nomvisiteur  $prenomvisiteur    " ?> <a href="../gf4/gf4.php?nom=<?php echo $nomvisiteur;?> & prenom=<?php echo $prenomvisiteur;?>,">  ajouter<img src="ajouter.png" class="image" ></a></h1>
             <table>
             <thead>
