@@ -51,7 +51,7 @@ if($modifier==1){
                     <tr>
                         <td style="width: 180px;">PERIODE </td>
                         <td >Mois (2 chiffres) :<input type="number" id="mois" value=<?php echo (date("m"));?> name="mois" required maxlength="2" class="saisie_input" readonly="readonly" ></td>
-                        <td >Année (4 chiffres) :<input type="text" id="annee" value=<?php echo (date("Y"));?> name="annee" required maxlength="4" class="saisie_input" readonly="readonly"></td>
+                        <td >Annee (4 chiffres) :<input type="text" id="annee" value=<?php echo (date("Y"));?> name="annee" required maxlength="4" class="saisie_input" readonly="readonly"></td>
                     </tr>
                     <tr>
                         <td>D'ENGAGEMENT</td>
@@ -74,7 +74,7 @@ if($modifier==1){
                         <td><input type="number" id="repas" value=<?php echo $repas?> name="repas" class="saisie_input" ></td>
                     </tr>
                     <tr>
-                        <td>Nuitées :</td>
+                        <td>Nuitees :</td>
                         <td><input type="number" id="nuitees" value=<?php echo $nuitees?> name="nuitees" class="saisie_input"></td>
                     </tr>
                     <tr>
@@ -93,7 +93,7 @@ if($modifier==1){
                         <td><input type="number" id="repas" value="" name="repas" class="saisie_input" ></td>
                     </tr>
                     <tr>
-                        <td>Nuitées :</td>
+                        <td>Nuitees :</td>
                         <td><input type="number" id="nuitees" value="" name="nuitees" class="saisie_input"></td>
                     </tr>
                     <tr>
