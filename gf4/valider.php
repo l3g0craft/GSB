@@ -8,7 +8,7 @@ $id=idSQL('fichefrais');
 
 
 $resultat=[];
-
+$idvisite=$_GET['id'];
 $date = date("Y-m-d"); 
 $mois =$_GET['mois'];
 $annee = $_GET['annee'];
@@ -55,7 +55,7 @@ if($modifier==1){
 }else{
 
 
-    $sql="INSERT INTO fichefrais (id,idvisiteur,mois,annee,montantValide,dateModif,idEtat) VALUES ($id,1,$mois,$annee,$montant,'$date','CR');";
+    $sql="INSERT INTO fichefrais (id,idvisiteur,mois,annee,montantValide,dateModif,idEtat) VALUES ($id,$idvisite,$mois,$annee,$montant,'$date','CR');";
 
     echo "Sql : ".$sql."<br />";
     $result = $cnxBDD->query($sql)

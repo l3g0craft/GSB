@@ -1,6 +1,13 @@
 <?php 
 $nomvisiteur=$_GET['nom'];
 $prenomvisiteur=$_GET['prenom'];
+$montant= "SELECT fichefrais.id FROM fichefrais,Etat where idVisiteur in (select id from visiteur where nom='$nomvisiteur' and prenom='$prenomvisiteur')";
+$result= $cnxBDD->query($montant);
+while ($row = mysqli_fetch_assoc($result)){  
+    $id=$row['id'];
+}
+
+
 ?>
 <html>
     <head>
@@ -12,7 +19,7 @@ $prenomvisiteur=$_GET['prenom'];
 
     <body>
         <div style=" width: 1000px;margin: 0 auto;">
-            <h1>fiche de frais de : <?php echo " $nomvisiteur  $prenomvisiteur    " ?> <a href="../gf4/gf4.php?nom=<?php echo $nomvisiteur;?> & prenom=<?php echo $prenomvisiteur;?>,">  ajouter<img src="ajouter.png" class="image" ></a></h1>
+            <h1>fiche de frais de : <?php echo " $nomvisiteur  $prenomvisiteur    " ?> <a href="../gf4/gf4.php?nom=<?php echo $nomvisiteur;?> & prenom=<?php echo $prenomvisiteur;?> & id=<?php echo $id;?>,">  ajouter<img src="ajouter.png" class="image" ></a></h1>
             <table>
             <thead>
                 <tr>
@@ -38,17 +45,17 @@ $prenomvisiteur=$_GET['prenom'];
 
                             <td class="ligne">
                                 <?php if ($row['idEtat']=="CR"){?>
-                                    <a href="suprimer.php?id=<?php echo $row['id'];?>"><img src="supprimer.jpg"class="image"></a>
+                                    <a href="suprimer.php?id=<?php echo $id;?>"><img src="supprimer.jpg"class="image"></a>
                                 <?php } ?>
                             </td>
 
                             <td class="ligne">
                                 <?php if ($row['idEtat']=="CR"){?>
-                                    <a href="../gf4/gf4.php?modifier=1 & id=<?php echo $row['id'];?>">
+                                    <a href="../gf4/gf4.php?modifier=1 & id=<?php echo $id;?>">
                                     <img src="modifier.jpg" class="image" ></td>
                                 <?php } ?>
 
-                            <td class="ligne"><a href="../gf5/gf5.php?id=<?php echo $row['id'];?> & nom=<?php echo $nomvisiteur;?> & prenom=<?php echo $prenomvisiteur;?> & mois=<?php echo $row['mois'];?> & annee=<?php echo $row['annee'];?>"><img src="voir.jpg" class="image" ></td>
+                            <td class="ligne"><a href="../gf5/gf5.php?id=<?php echo $id;?> & nom=<?php echo $nomvisiteur;?> & prenom=<?php echo $prenomvisiteur;?> & mois=<?php echo $row['mois'];?> & annee=<?php echo $row['annee'];?>"><img src="voir.jpg" class="image" ></td>
                         </tr>
                     
 

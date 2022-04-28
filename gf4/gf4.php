@@ -5,6 +5,7 @@ include '../fonctiongenevisiteur.php';
         // Connexion    la base de donn  es gsb_frais
 $cnxBDD = connexion();
 $modifier = $_GET['modifier'];
+$id = $_GET['id'];
 $i=0;
 if($modifier==1){
     $id=$_GET['id'];
@@ -109,6 +110,7 @@ if($modifier==1){
 
                     
                     <input type="hidden" id="modifier" name="modifier" value=<?php echo $modifier?>>
+                    <input type="hidden" id="id" name="id" value=<?php echo $id?>>
                 </table>
 
                 
