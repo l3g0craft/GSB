@@ -1,0 +1,14 @@
+.frais{
+    border: 3px ridge rgb(199, 199, 199);
+  }
+
+  .tablefrais {
+    border-collapse: collapse;
+    width: 80%;
+    text-align: center;
+    
+  }
+
+  input{
+    width: 40px;  
+  }

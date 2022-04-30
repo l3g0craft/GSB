@@ -1,11 +1,28 @@
 <?php
  header('Content-type:text/html; charset=iso-8859-1');
 function connexion(){
-    $host = "127.0.0.1";
-        $user = "root";
-        $password = "password";
-        $dbname = "gsb_frais";
-        $port ="3307";
+
+            //local
+            $host = "127.0.0.1";
+            $user = "root";
+            $password = "leahpar29";
+            $dbname = "gsb_frais";
+            $port='3306';
+
+            
+            //serveur
+            /*
+            $host = "localhost";
+            $user = "leahpar29";
+            $password = "Iroise29";
+            $dbname = "gsb_frais";
+            $port='3306';*/
+
+
+
+
+
+
 
         $mysqli = new mysqli($host, $user, $password, $dbname, $port);
         if ($mysqli->connect_errno) {
@@ -46,12 +63,35 @@ function ecritRequeteSQL($uneChaine) {
 
 
 $cnxBDD = connexion();
-
 function idSQL($table){
     global $cnxBDD;
-    $sql="SELECT COUNT(id) FROM $table;";
+    $sql="SELECT id FROM $table;";
     $result= $cnxBDD->query($sql);
+    $id=0;
     while ($row = mysqli_fetch_assoc($result)){
-        return ($row['COUNT(id)']);
+            $id=$row['id'];
+            
     }
+    return ($id+1);
+}
+
+
+function quantforfait($id){
+    global $cnxBDD;
+    $i=0;
+    $select_forfait= "SELECT quantite FROM lignefraisforfait where idfichefrais=$id"  ;
+    $result= $cnxBDD->query($select_forfait);
+    $lignefraisforfait=[];
+    while ($row = mysqli_fetch_assoc($result)){
+        
+        $lignefraisforfait[$i]=$row['quantite'];
+        $i++;
+    }
+    return $lignefraisforfait;
+    /*
+    $repas = $lignefraisforfait[0];
+    $nuitees = $lignefraisforfait[1];
+    $etape = $lignefraisforfait[2];
+    $km = $lignefraisforfait[3];
+    */
 }
