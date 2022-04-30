@@ -1,4 +1,9 @@
 <?php 
+include '../fonctiongenevisiteur.php';
+// Connexion    la base de donn  es gsb_frais
+$cnxBDD = connexion();
+
+
 $nomvisiteur=$_GET['nom'];
 $prenomvisiteur=$_GET['prenom'];
 $montant= "SELECT fichefrais.id FROM fichefrais,Etat where idVisiteur in (select id from visiteur where nom='$nomvisiteur' and prenom='$prenomvisiteur')";
@@ -31,9 +36,7 @@ while ($row = mysqli_fetch_assoc($result)){
             </thead>
             <?php
 
-                include '../fonctiongenevisiteur.php';
-                // Connexion    la base de donn  es gsb_frais
-                $cnxBDD = connexion();
+                
 
 
                 $montant= "SELECT fichefrais.id,mois,annee,montantValide,libelle,idEtat FROM fichefrais,Etat where idVisiteur in (select id from visiteur where nom='$nomvisiteur' and prenom='$prenomvisiteur') and fichefrais.idEtat=Etat.id ORDER BY annee DESC ,mois DESC ; " ;
