@@ -35,7 +35,7 @@ $result= $cnxBDD->query($select_forfait);
     }
 $montant=$forfait[1]*$etape+$forfait[2]*$km+$forfait[3]*$repas+$forfait[4]*$nuitees;
 
-
+var_dump ($forfait) ;
 
 
 if($modifier==1){
