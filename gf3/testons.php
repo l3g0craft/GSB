@@ -24,7 +24,7 @@ while ($row = mysqli_fetch_assoc($result)){
 
     <body>
         <div style=" width: 1000px;margin: 0 auto;">
-            <h1>fiche de frais de : <?php echo " $nomvisiteur  $prenomvisiteur    " ?> <a href="../gf4/gf4.php?nom=<?php echo $nomvisiteur;?> & prenom=<?php echo $prenomvisiteur;?> & id=<?php echo $id;?>,">  ajouter<img src="ajouter.png" class="image" ></a></h1>
+            <h1>fiche de frais de : <?php echo " $nomvisiteur  $prenomvisiteur    " ?> <a href="../gf4/gf4.php?nom=<?php echo $nomvisiteur;?> & prenom=<?php echo $prenomvisiteur;?> & id=<?php echo $id;?>">  ajouter<img src="ajouter.png" class="image" ></a></h1>
             <table>
             <thead>
                 <tr>
