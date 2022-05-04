@@ -65,7 +65,7 @@ $annee =$_GET['annee'];
                                         $quantite=[];
                                         $quantite=quantforfait($id);
                                         
-                                        $montant= "SELECT mois,annee,montantValide,libelle FROM fichefrais,Etat where fichefrais.id=1 and fichefrais.idEtat=Etat.id;" ;
+                                        $montant= "SELECT mois,annee,montantValide,libelle FROM fichefrais,Etat where fichefrais.id=$id and fichefrais.idEtat=Etat.id;" ;
                                         $result= $cnxBDD->query($montant);
                                         while ($row = mysqli_fetch_assoc($result)){
 
