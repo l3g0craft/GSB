@@ -13,4 +13,7 @@ $sql="DELETE FROM  fichefrais WHERE id=$id;";
 echo "Sql : ".$sql."<br />";
 $result = $cnxBDD->query($sql)
  	or die ("Requete invalide : ".$sql);  
+
+	header("location:".  $_SERVER['HTTP_REFERER']); 
+
 ?>
