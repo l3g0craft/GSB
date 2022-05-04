@@ -2,15 +2,14 @@
     <head>
         <meta charset="UTF-8">
         <title>valide fiche</title>
-        <link rel="stylesheet" type="text/css" href="valide_fiche.css"/>
+        <link rel="stylesheet" type="text/css" href="../gsb.css"/>
     </head>
     <body>
         <div class="valide">
             <h1>Validation des frais par visiteur</h1>
-            <form method="get" action="valide_fiche.php">
+            <form method="get" action="valide_fiche.php?data<=?=$visiteur?>">
                 <table style="padding-right:10%">
                     <tr>
-                        
                         <td>
                             <?php
                             
@@ -18,24 +17,15 @@
 
                                 $cnxBDD= connexion();
 
-                                //récupère les prenom des visiteur dont l'idEtat est cloturée
-                                $select = 'SELECT DISTINCT visiteur.id id,nom,prenom FROM visiteur,fichefrais WHERE fichefrais.idVisiteur=visiteur.id AND idEtat="CL";';
-                                
-                                //exécution de la requete select
-                                $result = $cnxBDD->query($select);
-                                echo '<label for="Visiteur">Choix du visiteur :</label>'; 
+                                $visiteur=$_GET["visiteur"];
+                                $idvisiteur=$visiteur;
+                                echo '<label for="visiteur">ID du visiteur :</label>'; 
                                 echo'<td>';
-                                    echo '<select name="visiteur" id="visiteur">';
-                                    echo '<option value=""></option>'; 
-                                    
-                                    //affichage des noms des visiteurs dans une liste
-                                    while($row = mysqli_fetch_assoc($result)) {
-                                        echo "<option value='$row[id]'>$row[prenom]"." "."$row[nom]</option>";
-                                    }
-                                    echo '</select>';  
+                                    echo "<input type='text' name='visiteur' value='$visiteur' readonly></input>"; 
                                 echo'<td>';
-                            $cnxBDD->close();
-                        ?>
+
+                            ?>
+                            
                         </td>
                     </tr>
                     <tr>
@@ -66,19 +56,73 @@
                         <td>Km</td>
                         <td>Situation</td>
                     </tr>
+                    
                     <tr>
-                            <td>
-                                <input type="number" min="0" name="repas" class="txt"/>
-                            </td>
-                            <td>
-                                <input type="number" min="0" name="nuitee" class="txt"/>
-                            </td>
-                            <td>
-                                <input type="number" min="0" name="Etape" class="txt"/>
-                            </td>
-                            <td>
-                                <input type="number" min="0" name="Km" class="txt"/>
-                            </td>
+                        <?php
+                            echo'<td width="75px" class="carre">';
+                            
+
+                                $visiteur=$_GET['visiteur'];
+
+                                $repas="SELECT DISTINCT quantite
+                                FROM visiteur,fichefrais,lignefraisforfait
+                                WHERE visiteur.id = fichefrais.idVisiteur
+                                AND fichefrais.idVisiteur=lignefraisforfait.idFicheFrais
+                                AND visiteur.id=$visiteur
+                                AND Forfait.id='REP';";
+
+                                $result = $cnxBDD->query($repas);
+
+                                while($row = mysqli_fetch_assoc($result)) {
+                                    echo"$row[quantite]<br/>";
+                                }
+
+                                //$cnxBDD ->close();
+                            
+                            echo'</td>';
+                            echo'<td width="75px" class="carre">';
+                                $nuitee="SELECT DISTINCT quantite
+                                FROM visiteur,fichefrais,lignefraisforfait
+                                WHERE visiteur.id = fichefrais.idVisiteur
+                                AND fichefrais.idVisiteur=lignefraisforfait.idFicheFrais
+                                AND visiteur.id=$visiteur
+                                AND Forfait.id='NUI';";
+
+                                $result = $cnxBDD->query($nuitee);
+
+                                while($row = mysqli_fetch_assoc($result)) {
+                                    echo"$row[quantite]<br/>";
+                                }
+                            echo'</td>';
+                            echo'<td width="75px" class="carre">';
+                                $etape="SELECT DISTINCT quantite
+                                FROM visiteur,fichefrais,lignefraisforfait
+                                WHERE visiteur.id = fichefrais.idVisiteur
+                                AND fichefrais.idVisiteur=lignefraisforfait.idFicheFrais
+                                AND visiteur.id=$visiteur
+                                AND Forfait.id='ETP';";
+
+                                $result = $cnxBDD->query($etape);
+
+                                while($row = mysqli_fetch_assoc($result)) {
+                                    echo"$row[quantite]<br/>";
+                                }
+                            echo'</td>';
+                            echo'<td width="75px" class="carre">';
+                                $km="SELECT DISTINCT quantite
+                                FROM visiteur,fichefrais,lignefraisforfait
+                                WHERE visiteur.id = fichefrais.idVisiteur
+                                AND fichefrais.idVisiteur=lignefraisforfait.idFicheFrais
+                                AND visiteur.id=$visiteur
+                                AND Forfait.id='KM';";
+
+                                $result = $cnxBDD->query($km);
+
+                                while($row = mysqli_fetch_assoc($result)) {
+                                    echo"$row[quantite]<br/>";
+                                }
+                            echo'</td>';
+                        ?>
                         <td class="cellule">
                             <input type="radio" name="valide" value="valide" required/>
                             <label for="Situation">Valide</label>
