@@ -21,7 +21,7 @@ $annee =$_GET['annee'];
                 <div style="width: 600px;margin: 0 auto;color:rgb(70, 155, 224);">
 
                     <div>
-                        <h1 >Suivi de remboursement des frais <img src="gf4.png" style="vertical-align:middle;"></h1>
+                        <h1 >Suivi de remboursement des frais <img src="gf4.png" style="vertical-align:middle;" onclick="history.back(-1);"></h1>
                     </div>
 
                     <div style="background-color: #defaff">
