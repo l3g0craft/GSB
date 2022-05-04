@@ -26,14 +26,13 @@ $i=0;
 $forfait = [];
 
 
-$select_forfait= "SELECT id,libelle,montant FROM forfait" ;
+$select_forfait= "SELECT id,libelle,montant FROM Forfait" ;
 $result= $cnxBDD->query($select_forfait);
     while ($row = mysqli_fetch_assoc($result)){
         $i++;
         $forfait[$i]=$row['montant'];
     }
 $montant=$forfait[1]*$etape+$forfait[2]*$km+$forfait[3]*$repas+$forfait[4]*$nuitees;
-
 
 
 
