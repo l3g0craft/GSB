@@ -41,7 +41,7 @@ if($modifier==1){
 
                 <div style="background-color: white;color: rgb(0, 132, 255);";>
 
-                    <h1 >Gestion des Frais <img src="gf4.png" style="vertical-align:middle;"></h1>
+                    <h1 >Gestion des Frais <img src="gf4.png" style="vertical-align:middle; "onclick="history.back(-1);"></h1>
 
                 </div>
                 <h2>
@@ -114,7 +114,7 @@ if($modifier==1){
                 </table>
 
                 
-                <input type="submit"  id="valider" value="soumettre la requte">
+                <input type="submit"  id="valider" value="soumettre la requete">
             </div>
         </form>
     </body>
