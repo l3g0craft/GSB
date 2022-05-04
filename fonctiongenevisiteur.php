@@ -2,22 +2,11 @@
  header('Content-type:text/html; charset=iso-8859-1');
 function connexion(){
 
-            //local
             $host = "127.0.0.1";
             $user = "root";
-            $password = "password";
+            $password = "leahpar29";
             $dbname = "gsb_frais";
-            $port='3307';
-
-            
-            //serveur
-            /*
-            $host = "localhost";
-            $user = "leahpar29";
-            $password = "Iroise29";
-            $dbname = "gsb_frais";
-            $port='3306';*/
-
+            $port='3306';
 
 
 
