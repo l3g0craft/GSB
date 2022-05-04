@@ -5,10 +5,10 @@ $cnxBDD = connexion();
 
 $nomvisiteur=$_GET['nom'];
 $prenomvisiteur=$_GET['prenom'];
-$montant= "SELECT fichefrais.id FROM fichefrais,Etat where idVisiteur in (select id from visiteur where nom='$nomvisiteur' and prenom='$prenomvisiteur')";
+$montant= "SELECT idVisiteur FROM fichefrais,Etat where idVisiteur in (select id from visiteur where nom='$nomvisiteur' and prenom='$prenomvisiteur')";
 $result= $cnxBDD->query($montant);
 while ($row = mysqli_fetch_assoc($result)){  
-    $idvisite=$row['id'];
+    $idvisite=$row['idVisiteur'];
 }
 
 
