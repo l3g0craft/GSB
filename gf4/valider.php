@@ -6,7 +6,7 @@ $cnxBDD = connexion();
 $id=idSQL('fichefrais');
 
 
-
+$T=["ETP","KM","NUI","REP"];
 $resultat=[];
 $idvisite=$_GET['id'];
 $date = date("Y-m-d"); 
@@ -40,7 +40,7 @@ $montant=$forfait[1]*$etape+$forfait[2]*$km+$forfait[3]*$repas+$forfait[4]*$nuit
 if($modifier==1){
     while($a<=count($T)-1){
 
-        $sql="UPDATE lignefraisforfait SET quantite=$resultat[$a] where idFicheFrais=1 and idForfait='$T[$a]' ;";
+        $sql="UPDATE lignefraisforfait SET quantite=$resultat[$a] where idFicheFrais=$idvisite  and idForfait='$T[$a]' ;";
         $a++;
         echo "Sql : ".$sql."<br />";
         $result = $cnxBDD->query($sql)
@@ -48,7 +48,7 @@ if($modifier==1){
         
         
     }
-        $sql="UPDATE fichefrais SET montantValide=$montant where id=1 ;";
+        $sql="UPDATE fichefrais SET montantValide=$montant where id=$idvisite ;";
         echo "Sql : ".$sql."<br />";
         $result = $cnxBDD->query($sql)
             or die ("Requete invalide : ".$sql);
@@ -64,7 +64,7 @@ if($modifier==1){
 
 
         #ecrire lignefichefrais
-        $T=["ETP","KM","NUI","REP"];
+        
             for($a=0;$a<4;$a++){
                 $table=[$etape,$km,$nuitees,$repas];
                 $sql="INSERT INTO lignefraisforfait (idFicheFrais,idForfait,quantite) VALUES ('$id','$T[$a]','$table[$a]');";
