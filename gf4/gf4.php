@@ -1,6 +1,4 @@
 <?php
-#$nom =$_GET['nom'];
-#$prenom = $_GET['prenom'];
 include '../fonctiongenevisiteur.php';
         // Connexion    la base de donn  es gsb_frais
 $cnxBDD = connexion();
@@ -8,7 +6,6 @@ $modifier = $_GET['modifier'];
 $id = $_GET['id'];
 $i=0;
 if($modifier==1){
-    $id=$_GET['id'];
     $select_forfait= "SELECT quantite FROM lignefraisforfait where idfichefrais=$id"  ;
     $result= $cnxBDD->query($select_forfait);
     $lignefraisforfait=[];
@@ -20,7 +17,6 @@ if($modifier==1){
     $nuitees =$lignefraisforfait[2];
     $etape =$lignefraisforfait[3];
     $km =$lignefraisforfait[4];
-    echo $repas;
 }
 
 ?>
@@ -41,7 +37,7 @@ if($modifier==1){
 
                 <div style="background-color: white;color: rgb(0, 132, 255);";>
 
-                    <h1 >Gestion des Frais <img src="gf4.png" style="vertical-align:middle;"></h1>
+                    <h1 >Gestion des Frais <img src="gf4.png" style="vertical-align:middle;" onclick="history.back(-1);"></h1>
 
                 </div>
                 <h2>
@@ -114,7 +110,7 @@ if($modifier==1){
                 </table>
 
                 
-                <input type="submit"  id="valider" value="soumettre la requte">
+                <input type="submit"  id="valider" value="soumettre la requete">
             </div>
         </form>
     </body>

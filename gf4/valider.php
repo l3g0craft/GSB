@@ -78,8 +78,9 @@ if($modifier==1){
         }}
 
 
-
-
-
-
+        //javascript pour revenir a la page principale
+        echo "<script>
+        window.history.go(-2);
+        </script>";
 ?>
+
