@@ -69,7 +69,7 @@
                                 WHERE visiteur.id = fichefrais.idVisiteur
                                 AND fichefrais.idVisiteur=lignefraisforfait.idFicheFrais
                                 AND visiteur.id=$visiteur
-                                AND Forfait.id='REP';";
+                                AND idForfait='REP';";
 
                                 $result = $cnxBDD->query($repas);
 
@@ -86,7 +86,7 @@
                                 WHERE visiteur.id = fichefrais.idVisiteur
                                 AND fichefrais.idVisiteur=lignefraisforfait.idFicheFrais
                                 AND visiteur.id=$visiteur
-                                AND Forfait.id='NUI';";
+                                AND idForfait='NUI';";
 
                                 $result = $cnxBDD->query($nuitee);
 
@@ -100,7 +100,7 @@
                                 WHERE visiteur.id = fichefrais.idVisiteur
                                 AND fichefrais.idVisiteur=lignefraisforfait.idFicheFrais
                                 AND visiteur.id=$visiteur
-                                AND Forfait.id='ETP';";
+                                AND idForfait='ETP';";
 
                                 $result = $cnxBDD->query($etape);
 
@@ -114,7 +114,7 @@
                                 WHERE visiteur.id = fichefrais.idVisiteur
                                 AND fichefrais.idVisiteur=lignefraisforfait.idFicheFrais
                                 AND visiteur.id=$visiteur
-                                AND Forfait.id='KM';";
+                                AND idForfait='KM';";
 
                                 $result = $cnxBDD->query($km);
 
