@@ -1,5 +1,12 @@
 .connexion{
-    background-color:#FF7A33;
-    color:white;
+    background-color:#c7edf7;
+    color:black;
     width:50%;
+}
+
+.separateur{
+    background-color:DodgerBlue;
+    height:10px;
+    width:50%;
+    margin-bottom:0px;
 }

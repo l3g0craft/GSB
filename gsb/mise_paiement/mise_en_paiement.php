@@ -21,5 +21,10 @@ $sql="$paiement";
 		or die ("Requete invalide : ".$sql); 
 
 
-$cnxBDD->close();	 
+$cnxBDD->close();
+
+echo "<script>
+window.history.go(-2);
+</script>";
+
 ?>

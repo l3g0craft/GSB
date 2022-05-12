@@ -1,6 +1,7 @@
 <!DOCTYPE html>
+<html lang="fr">
     <head>
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
         <title>valide fiche</title>
         <link rel="stylesheet" type="text/css" href="../gsb.css"/>
     </head>
@@ -50,10 +51,10 @@
                 <h2>Frais au forfait</h2>
                 <table border="1" class="tablo">
                     <tr>
-                        <td>Repas midi</td>
-                        <td>Nuitée</td>
-                        <td>Etape</td>
-                        <td>Km</td>
+                        <td class="espacement">Repas midi</td>
+                        <td class="espacement">Nuitée</td>
+                        <td class="espacement">Etape</td>
+                        <td class="espacement">Km</td>
                         <td>Situation</td>
                     </tr>
                     
@@ -69,29 +70,29 @@
                                 WHERE visiteur.id = fichefrais.idVisiteur
                                 AND fichefrais.idVisiteur=lignefraisforfait.idFicheFrais
                                 AND visiteur.id=$visiteur
-                                AND Forfait.id='REP';";
+                                AND idForfait='REP';";
 
                                 $result = $cnxBDD->query($repas);
 
                                 while($row = mysqli_fetch_assoc($result)) {
-                                    echo"$row[quantite]<br/>";
+                                    echo"<input class='carre' value='$row[quantite]' readonly<br/>";
                                 }
 
                                 //$cnxBDD ->close();
                             
                             echo'</td>';
-                            echo'<td width="75px" class="carre">';
+                            echo'<td width="75px">';
                                 $nuitee="SELECT DISTINCT quantite
                                 FROM visiteur,fichefrais,lignefraisforfait
                                 WHERE visiteur.id = fichefrais.idVisiteur
                                 AND fichefrais.idVisiteur=lignefraisforfait.idFicheFrais
                                 AND visiteur.id=$visiteur
-                                AND Forfait.id='NUI';";
+                                AND idForfait='NUI';";
 
                                 $result = $cnxBDD->query($nuitee);
 
                                 while($row = mysqli_fetch_assoc($result)) {
-                                    echo"$row[quantite]<br/>";
+                                    echo"<input class='carre' value='$row[quantite]' readonly><br/>";
                                 }
                             echo'</td>';
                             echo'<td width="75px" class="carre">';
@@ -100,12 +101,12 @@
                                 WHERE visiteur.id = fichefrais.idVisiteur
                                 AND fichefrais.idVisiteur=lignefraisforfait.idFicheFrais
                                 AND visiteur.id=$visiteur
-                                AND Forfait.id='ETP';";
+                                AND idForfait='ETP';";
 
                                 $result = $cnxBDD->query($etape);
 
                                 while($row = mysqli_fetch_assoc($result)) {
-                                    echo"$row[quantite]<br/>";
+                                    echo"<input class='carre' value='$row[quantite]' readonly><br/>";
                                 }
                             echo'</td>';
                             echo'<td width="75px" class="carre">';
@@ -114,12 +115,12 @@
                                 WHERE visiteur.id = fichefrais.idVisiteur
                                 AND fichefrais.idVisiteur=lignefraisforfait.idFicheFrais
                                 AND visiteur.id=$visiteur
-                                AND Forfait.id='KM';";
+                                AND idForfait='KM';";
 
                                 $result = $cnxBDD->query($km);
 
                                 while($row = mysqli_fetch_assoc($result)) {
-                                    echo"$row[quantite]<br/>";
+                                    echo"<input class='carre' value='$row[quantite]' readonly<br/>";
                                 }
                             echo'</td>';
                         ?>

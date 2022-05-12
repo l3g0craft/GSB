@@ -43,7 +43,7 @@ if($situation=="non valide"){
 
 	//récupération de l'id du visiteur
 	while($row = mysqli_fetch_assoc($requeteid)) {
-    	$idinvalide="UPDATE fichefrais SET idEtat='NB' WHERE idVisiteur=$row[id] AND mois='$mois' AND annee='$annee';";
+    	$idinvalide="UPDATE fichefrais SET idEtat='NV' WHERE idVisiteur=$row[id] AND mois='$mois' AND annee='$annee';";
         $justif="UPDATE fichefrais SET nbJustificatifs=$nbrjustificatifs WHERE idVisiteur=$row[id] AND mois='$mois' AND annee='$annee';";
 
 	//execution de la requete idinvalide
@@ -55,5 +55,9 @@ if($situation=="non valide"){
 }
 
 $cnxBDD->close();
+
+echo "<script>
+window.history.go(-2);
+</script>";
 
 ?>

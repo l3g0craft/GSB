@@ -1,9 +1,9 @@
 .valide{
-    background-color:#FF7A33;
-    color:#FFFFFF;
+    background-color: #FF7A33;
     padding : 5px 5px 5px 5px;
     margin: auto;
     width:75%;
+    color:white;
 }
 
 .tablo{ 
@@ -37,7 +37,15 @@
 }
 
 .carre{
-    border: 2px solid white;
+    background-color:#FF7A33;
+    border-color:white;
+    text-align:center;
+    color:white;
+    width: 30px;
+}
+
+.espacement{
+    width:100px;
 }
 
 .mise_paiement{
@@ -55,4 +63,15 @@
     border-color:#1eb4b4;
 }
 
+.bouton2{
+    color:#1eb4b4;
+    border-color:#1eb4b4;
+}
 
+
+.accueil{
+    background-color: #c7edf7;
+    padding : 5px 5px 5px 5px;
+    margin: auto;
+    width:75%;
+}
